@@ -1,0 +1,466 @@
+
+mysql> use OnlineFoodOrdering;
+Database changed
+mysql> create table Restaurants(RestaurantID int primary key auto_increment,RestaurantName varchar(20),RestaurantAddress varchar(20),Restaurantity varchar(20),ContactNo bigint);
+Query OK, 0 rows affected (2.03 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Indian Accent','Friends Colony','New Delhi',9632587415);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Peshawri','Sahar Road','Mumbai',9869532155);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Agashiye','Lal Darwaja','Ahmedabad',9369875201);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Malaka Spice','Koregaon Park','Pune',9836410235);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Pinch of Spice','Sanjay Palace','Agra',9423578961);
+Query OK, 1 row affected (0.14 sec)
+
+
+mysql> select * from Restaurants;
++--------------+----------------+-------------------+---------------+------------+
+| RestaurantID | RestaurantName | RestaurantAddress | Restaurantity | ContactNo  |
++--------------+----------------+-------------------+---------------+------------+
+|            1 | Indian Accent  | Friends Colony    | New Delhi     | 9632587415 |
+|            2 | Peshawri       | Sahar Road        | Mumbai        | 9869532155 |
+|            3 | Agashiye       | Lal Darwaja       | Ahmedabad     | 9369875201 |
+|            4 | Malaka Spice   | Koregaon Park     | Pune          | 9836410235 |
+|            5 | Pinch of Spice | Sanjay Palace     | Agra          | 9423578961 |
++--------------+----------------+-------------------+---------------+------------+
+5 rows in set (0.07 sec)
+
+mysql> create table RMenuItems(MenuID int primary key auto_increment,RestID int,MenuName varchar(20),MenuType varchar(20),MenuCategory varchar(20),MenuPrice float,MenuDesc varchar(20),foreign key(RestId) references Restaurants(RestaurantID));
+Query OK, 0 rows affected (2.83 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(1,'Paneer Tikka','Side-Dish','Veg',300,'Spicy');
+Query OK, 1 row affected (0.25 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(2,'Grill Chicken','Side-Dish','Non-Veg',600,'Spicy');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(3,'Ice-Cream','Dessart','Veg',100,'Sweet');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(4,'Milkshake','Dessart','Veg',300,'Sweet');
+Query OK, 1 row affected (0.46 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(5,'Meals','Main-Dish','Non-Veg',1000,'Spicy');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> select * from RMenuItems;
++--------+--------+---------------+-----------+--------------+-----------+----------+
+| MenuID | RestID | MenuName      | MenuType  | MenuCategory | MenuPrice | MenuDesc |
++--------+--------+---------------+-----------+--------------+-----------+----------+
+|      1 |      1 | Paneer Tikka  | Side-Dish | Veg          |       300 | Spicy    |
+|      2 |      2 | Grill Chicken | Side-Dish | Non-Veg      |       600 | Spicy    |
+|      3 |      3 | Ice-Cream     | Dessart   | Veg          |       100 | Sweet    |
+|      4 |      4 | Milkshake     | Dessart   | Veg          |       300 | Sweet    |
+|      5 |      5 | Meals         | Main-Dish | Non-Veg      |      1000 | Spicy    |
++--------+--------+---------------+-----------+--------------+-----------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Maniam Classic','Bus Stand','Coimbatore',9423578961);
+Query OK, 1 row affected (0.23 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Food Paradise','Tower Line','Agra',9875369542);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into Restaurants(RestaurantName,RestaurantAddress,Restaurantity,ContactNo)values('Spice World','Keetham Lake','Agra',9836927850);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(5,'Mini-eals','Main-Dish','Veg',500,'Spicy');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(6,'Fish-Fry','Side-Dish','Non-Veg',500,'Spicy');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(6,'Prawn Gravy','Side-Dish','Non-Veg',800,'Spicy');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(7,'Tomato-Soup','Side-Dish','Veg',600,'Spicy');
+Query OK, 1 row affected (0.44 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(7,'Pav-Bhaji','Side-Dish','Veg',100,'Spicy');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(2,'Chicken Briyani','Main-Dish','Non-Veg',800,'Spicy');
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into RMenuItems(RestID,MenuName,MenuType,MenuCategory,MenuPrice,MenuDesc)values(3,'Falooda','Side-Dish','Veg',300,'Sweet');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from RMenuItems;
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+| MenuID | RestID | MenuName        | MenuType  | MenuCategory | MenuPrice | MenuDesc |
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+|      1 |      1 | Paneer Tikka    | Side-Dish | Veg          |       300 | Spicy    |
+|      2 |      2 | Grill Chicken   | Side-Dish | Non-Veg      |       600 | Spicy    |
+|      3 |      3 | Ice-Cream       | Dessart   | Veg          |       100 | Sweet    |
+|      4 |      4 | Milkshake       | Dessart   | Veg          |       300 | Sweet    |
+|      5 |      5 | Meals           | Main-Dish | Non-Veg      |      1000 | Spicy    |
+|      6 |      5 | Mini-eals       | Main-Dish | Veg          |       500 | Spicy    |
+|      7 |      6 | Fish-Fry        | Side-Dish | Non-Veg      |       500 | Spicy    |
+|      8 |      6 | Prawn Gravy     | Side-Dish | Non-Veg      |       800 | Spicy    |
+|      9 |      7 | Tomato-Soup     | Side-Dish | Veg          |       600 | Spicy    |
+|     10 |      7 | Pav-Bhaji       | Side-Dish | Veg          |       100 | Spicy    |
+|     11 |      2 | Chicken Briyani | Main-Dish | Non-Veg      |       800 | Spicy    |
+|     12 |      3 | Falooda         | Side-Dish | Veg          |       300 | Sweet    |
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+12 rows in set (0.00 sec)
+
+mysql> create table Customers(CustomerID int primary key auto_increment,CustomerName varchar(15),CustomerCity varchar(10),CustomerDOB Date,CustomerGender varchar(6),CustomerPassword varchar(20));
+Query OK, 0 rows affected (1.90 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Radhika','Coimbatore','2000-05-20','Female','pass1234');
+Query OK, 1 row affected (0.22 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Lakshana','Agra','1999-07-24','Female','oops0234');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Magudes','Mumbai','1998-10-14','Male','lops4896');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Aadhav','Pune','2001-05-09','Male','wert3286');
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Nandy','Mumbai','2003-12-01','Female','mnbv4569');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Gaurav','New Delhi','2001-07-19','Male','uiop8672');
+Query OK, 1 row affected (0.22 sec)
+
+mysql> insert into Customers(CustomerName,CustomerCity,CustomerDOB,CustomerGender,CustomerPassword) values('Virubha','Ahmedabad','2002-10-13','Female','dfgh8925');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from Customers;
++------------+--------------+--------------+-------------+----------------+------------------+
+| CustomerID | CustomerName | CustomerCity | CustomerDOB | CustomerGender | CustomerPassword |
++------------+--------------+--------------+-------------+----------------+------------------+
+|          1 | Radhika      | Coimbatore   | 2000-05-20  | Female         | pass1234         |
+|          2 | Lakshana     | Agra         | 1999-07-24  | Female         | oops0234         |
+|          3 | Magudes      | Mumbai       | 1998-10-14  | Male           | lops4896         |
+|          4 | Aadhav       | Pune         | 2001-05-09  | Male           | wert3286         |
+|          5 | Nandy        | Mumbai       | 2003-12-01  | Female         | mnbv4569         |
+|          6 | Gaurav       | New Delhi    | 2001-07-19  | Male           | uiop8672         |
+|          7 | Virubha      | Ahmedabad    | 2002-10-13  | Female         | dfgh8925         |
++------------+--------------+--------------+-------------+----------------+------------------+
+7 rows in set (0.00 sec)
+
+
+mysql> create table Orders(OrderID int primary key auto_increment,CustomerID int,OrderDate Date,DeliveryAddress varchar(20),OrderStatus varchar(10),foreign key(CustomerID)references Customers(CustomerID));
+Query OK, 0 rows affected (0.86 sec)
+
+mysql> insert into(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(1,'2020-11-01','Coimbatore','Delivered');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(1,'2020-11-01','Coimbat' at line 1
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(1,'2020-11-01','Coimbatore','Delivered');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(2,'2020-11-23','Agra','Prepared');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(1,'2020-11-06','Coimbatore','Delivered');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(1,'2020-11-18','Coimbatore','Delivered');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(3,'2020-11-20','Mumbai','Prepared');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(3,'2020-10-17','Mumbai','Delivered');
+Query OK, 1 row affected (0.46 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(3,'2020-10-30','Mumbai','Delivered');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(4,'2020-10-31','Pune','Delivered');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(5,'2020-11-13','Mumbai','Delivered');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-11-17','New Delhi','Delivered');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-11-22','New Delhi','Delivered');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-11-23','New Delhi','Delivered');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(5,'2020-11-19','Mumbai','Delivered');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(5,'2020-11-21','Mumbai','Delivered');
+Query OK, 1 row affected (0.31 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(7,'2020-09-15','Ahmedabad','Delivered');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select * from Orders;
++---------+------------+------------+-----------------+-------------+
+| OrderID | CustomerID | OrderDate  | DeliveryAddress | OrderStatus |
++---------+------------+------------+-----------------+-------------+
+|       1 |          1 | 2020-11-01 | Coimbatore      | Delivered   |
+|       2 |          2 | 2020-11-23 | Agra            | Prepared    |
+|       3 |          1 | 2020-11-06 | Coimbatore      | Delivered   |
+|       4 |          1 | 2020-11-18 | Coimbatore      | Delivered   |
+|       5 |          3 | 2020-11-20 | Mumbai          | Prepared    |
+|       6 |          3 | 2020-10-17 | Mumbai          | Delivered   |
+|       7 |          3 | 2020-10-30 | Mumbai          | Delivered   |
+|       8 |          4 | 2020-10-31 | Pune            | Delivered   |
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |
+|      10 |          6 | 2020-11-17 | New Delhi       | Delivered   |
+|      11 |          6 | 2020-11-22 | New Delhi       | Delivered   |
+|      12 |          6 | 2020-11-23 | New Delhi       | Delivered   |
+|      13 |          5 | 2020-11-19 | Mumbai          | Delivered   |
+|      14 |          5 | 2020-11-21 | Mumbai          | Delivered   |
+|      15 |          7 | 2020-09-15 | Ahmedabad       | Delivered   |
++---------+------------+------------+-----------------+-------------+
+15 rows in set (0.00 sec)
+
+mysql> create table OrderMenu(OrderID int,MenuID int,MenuQty int,MenuPrice int,foreign key(OrderID) references Orders(OrderID),foreign key(MenuID)references RMenuItems(MenuID));
+Query OK, 0 rows affected (2.83 sec)
+
+mysql> insert into OrderMenu values(1,1,2,2*300);
+Query OK, 1 row affected (0.29 sec)
+
+mysql> insert into OrderMenu values(1,2,1,600);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into OrderMenu values(1,11,1,800);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into OrderMenu values(9,5,1,1000);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into OrderMenu values(15,5,1,1000);
+Query OK, 1 row affected (0.41 sec)
+
+mysql> insert into OrderMenu values(6,5,1,1000);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into OrderMenu values(9,12,3,3*300);
+Query OK, 1 row affected (0.46 sec)
+
+mysql> insert into OrderMenu values(3,12,2,2*300);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into OrderMenu values(2,10,1,100);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into OrderMenu values(4,10,1,100);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into OrderMenu values(10,9,1,600);
+Query OK, 1 row affected (0.45 sec)
+
+mysql> insert into OrderMenu values(12,9,1,600);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into OrderMenu values(13,9,1,600);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into OrderMenu values(5,4,1,300);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into OrderMenu values(15,4,1,300);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into OrderMenu values(13,4,2,2*300);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into OrderMenu values(14,8,1,800);
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert into OrderMenu values(9,8,1,800);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from OrderMenu
+    -> ;
++---------+--------+---------+-----------+
+| OrderID | MenuID | MenuQty | MenuPrice |
++---------+--------+---------+-----------+
+|       1 |      1 |       2 |       600 |
+|       1 |      2 |       1 |       600 |
+|       1 |     11 |       1 |       800 |
+|       9 |      5 |       1 |      1000 |
+|      15 |      5 |       1 |      1000 |
+|       6 |      5 |       1 |      1000 |
+|       9 |     12 |       3 |       900 |
+|       3 |     12 |       2 |       600 |
+|       2 |     10 |       1 |       100 |
+|       4 |     10 |       1 |       100 |
+|      10 |      9 |       1 |       600 |
+|      12 |      9 |       1 |       600 |
+|      13 |      9 |       1 |       600 |
+|       5 |      4 |       1 |       300 |
+|      15 |      4 |       1 |       300 |
+|      13 |      4 |       2 |       600 |
+|      14 |      8 |       1 |       800 |
+|       9 |      8 |       1 |       800 |
++---------+--------+---------+-----------+
+18 rows in set (0.00 sec)
+
+mysql> select * from Restaurants where Restaurantity='Agra';
++--------------+----------------+-------------------+---------------+------------+
+| RestaurantID | RestaurantName | RestaurantAddress | Restaurantity | ContactNo  |
++--------------+----------------+-------------------+---------------+------------+
+|            5 | Pinch of Spice | Sanjay Palace     | Agra          | 9634785214 |
+|            7 | Food Paradise  | Tower Line        | Agra          | 9875369542 |
+|            8 | Spice World    | Keetham Lake      | Agra          | 9836927850 |
++--------------+----------------+-------------------+---------------+------------+
+3 rows in set (0.03 sec)
+
+mysql> select r.RestaurantID,r.RestaurantName,m.MenuID,m.MenuName,m.MenuPrice from Restaurants r inner join RMenuItems m on r.RestaurantID=m.RestID;
++--------------+----------------+--------+-----------------+-----------+
+| RestaurantID | RestaurantName | MenuID | MenuName        | MenuPrice |
++--------------+----------------+--------+-----------------+-----------+
+|            1 | Indian Accent  |      1 | Paneer Tikka    |       300 |
+|            2 | Peshawri       |      2 | Grill Chicken   |       600 |
+|            3 | Agashiye       |      3 | Ice-Cream       |       100 |
+|            4 | Malaka Spice   |      4 | Milkshake       |       300 |
+|            5 | Pinch of Spice |      5 | Meals           |      1000 |
+|            5 | Pinch of Spice |      6 | Mini-eals       |       500 |
+|            6 | Maniam Classic |      7 | Fish-Fry        |       500 |
+|            6 | Maniam Classic |      8 | Prawn Gravy     |       800 |
+|            7 | Food Paradise  |      9 | Tomato-Soup     |       600 |
+|            7 | Food Paradise  |     10 | Pav-Bhaji       |       100 |
+|            2 | Peshawri       |     11 | Chicken Briyani |       800 |
+|            3 | Agashiye       |     12 | Falooda         |       300 |
++--------------+----------------+--------+-----------------+-----------+
+12 rows in set (0.25 sec)
+
+mysql> select r.RestaurantID,r.RestaurantName,m.MenuID,m.MenuName,m.MenuPrice from Restaurants r inner join RMenuItems m on r.RestaurantID=m.RestID where Restaurantity = 'Mumbai';
++--------------+----------------+--------+-----------------+-----------+
+| RestaurantID | RestaurantName | MenuID | MenuName        | MenuPrice |
++--------------+----------------+--------+-----------------+-----------+
+|            2 | Peshawri       |      2 | Grill Chicken   |       600 |
+|            2 | Peshawri       |     11 | Chicken Briyani |       800 |
++--------------+----------------+--------+-----------------+-----------+
+2 rows in set (0.09 sec)
+
+mysql> select * from Orders where CustomerID=5;
++---------+------------+------------+-----------------+-------------+
+| OrderID | CustomerID | OrderDate  | DeliveryAddress | OrderStatus |
++---------+------------+------------+-----------------+-------------+
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |
+|      13 |          5 | 2020-11-19 | Mumbai          | Delivered   |
+|      14 |          5 | 2020-11-21 | Mumbai          | Delivered   |
++---------+------------+------------+-----------------+-------------+
+3 rows in set (0.14 sec)
+
+mysql> select * from Orders o inner join OrderMenu om on o.OrderID=om.OrderID where CustomerID=5;
++---------+------------+------------+-----------------+-------------+---------+--------+---------+-----------+
+| OrderID | CustomerID | OrderDate  | DeliveryAddress | OrderStatus | OrderID | MenuID | MenuQty | MenuPrice |
++---------+------------+------------+-----------------+-------------+---------+--------+---------+-----------+
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |       9 |      5 |       1 |      1000 |
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |       9 |     12 |       3 |       900 |
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |       9 |      8 |       1 |       800 |
+|      13 |          5 | 2020-11-19 | Mumbai          | Delivered   |      13 |      9 |       1 |       600 |
+|      13 |          5 | 2020-11-19 | Mumbai          | Delivered   |      13 |      4 |       2 |       600 |
+|      14 |          5 | 2020-11-21 | Mumbai          | Delivered   |      14 |      8 |       1 |       800 |
++---------+------------+------------+-----------------+-------------+---------+--------+---------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-09-20','New Delhi','Delivered');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-09-19','New Delhi','Delivered');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-10-29','New Delhi','Delivered');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Orders(CustomerID,OrderDate,DeliveryAddress,OrderStatus)values(6,'2020-10-07','New Delhi','Delivered');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from Orders;
++---------+------------+------------+-----------------+-------------+
+| OrderID | CustomerID | OrderDate  | DeliveryAddress | OrderStatus |
++---------+------------+------------+-----------------+-------------+
+|       1 |          1 | 2020-11-01 | Coimbatore      | Delivered   |
+|       2 |          2 | 2020-11-23 | Agra            | Prepared    |
+|       3 |          1 | 2020-11-06 | Coimbatore      | Delivered   |
+|       4 |          1 | 2020-11-18 | Coimbatore      | Delivered   |
+|       5 |          3 | 2020-11-20 | Mumbai          | Prepared    |
+|       6 |          3 | 2020-10-17 | Mumbai          | Delivered   |
+|       7 |          3 | 2020-10-30 | Mumbai          | Delivered   |
+|       8 |          4 | 2020-10-31 | Pune            | Delivered   |
+|       9 |          5 | 2020-11-13 | Mumbai          | Delivered   |
+|      10 |          6 | 2020-11-17 | New Delhi       | Delivered   |
+|      11 |          6 | 2020-11-22 | New Delhi       | Delivered   |
+|      12 |          6 | 2020-11-23 | New Delhi       | Delivered   |
+|      13 |          5 | 2020-11-19 | Mumbai          | Delivered   |
+|      14 |          5 | 2020-11-21 | Mumbai          | Delivered   |
+|      15 |          7 | 2020-09-15 | Ahmedabad       | Delivered   |
+|      16 |          6 | 2020-09-20 | New Delhi       | Delivered   |
+|      17 |          6 | 2020-09-19 | New Delhi       | Delivered   |
+|      18 |          6 | 2020-10-29 | New Delhi       | Delivered   |
+|      19 |          6 | 2020-10-07 | New Delhi       | Delivered   |
++---------+------------+------------+-----------------+-------------+
+19 rows in set (0.00 sec)
+
+
+mysql> select * from Orders where CustomerID=6 order by OrderID desc limit 5;
++---------+------------+------------+-----------------+-------------+
+| OrderID | CustomerID | OrderDate  | DeliveryAddress | OrderStatus |
++---------+------------+------------+-----------------+-------------+
+|      19 |          6 | 2020-10-07 | New Delhi       | Delivered   |
+|      18 |          6 | 2020-10-29 | New Delhi       | Delivered   |
+|      17 |          6 | 2020-09-19 | New Delhi       | Delivered   |
+|      16 |          6 | 2020-09-20 | New Delhi       | Delivered   |
+|      12 |          6 | 2020-11-23 | New Delhi       | Delivered   |
++---------+------------+------------+-----------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from RMenuItems;
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+| MenuID | RestID | MenuName        | MenuType  | MenuCategory | MenuPrice | MenuDesc |
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+|      1 |      1 | Paneer Tikka    | Side-Dish | Veg          |       300 | Spicy    |
+|      2 |      2 | Grill Chicken   | Side-Dish | Non-Veg      |       600 | Spicy    |
+|      3 |      3 | Ice-Cream       | Dessart   | Veg          |       100 | Sweet    |
+|      4 |      4 | Milkshake       | Dessart   | Veg          |       300 | Sweet    |
+|      5 |      5 | Meals           | Main-Dish | Non-Veg      |      1000 | Spicy    |
+|      6 |      5 | Mini-eals       | Main-Dish | Veg          |       500 | Spicy    |
+|      7 |      6 | Fish-Fry        | Side-Dish | Non-Veg      |       500 | Spicy    |
+|      8 |      6 | Prawn Gravy     | Side-Dish | Non-Veg      |       800 | Spicy    |
+|      9 |      7 | Tomato-Soup     | Side-Dish | Veg          |       600 | Spicy    |
+|     10 |      7 | Pav-Bhaji       | Side-Dish | Veg          |       100 | Spicy    |
+|     11 |      2 | Chicken Briyani | Main-Dish | Non-Veg      |       800 | Spicy    |
+|     12 |      3 | Falooda         | Side-Dish | Veg          |       300 | Sweet    |
++--------+--------+-----------------+-----------+--------------+-----------+----------+
+12 rows in set (0.11 sec)
+
+
+mysql> select RestaurantName from Restaurants where RestaurantID in (select MenuID from RMenuItems where MenuID not in (select MenuID from OrderMenu));
++----------------+
+| RestaurantName |
++----------------+
+| Agashiye       |
+| Maniam Classic |
+| Food Paradise  |
++----------------+
+3 rows in set (0.00 sec)
+
+
+mysql> select distinct(m.MenuName) from RMenuItems m inner join OrderMenu o on m.MenuID=o.MenuID order by m.MenuID desc limit 10;
++-----------------+
+| MenuName        |
++-----------------+
+| Falooda         |
+| Chicken Briyani |
+| Pav-Bhaji       |
+| Tomato-Soup     |
+| Prawn Gravy     |
+| Meals           |
+| Milkshake       |
+| Grill Chicken   |
+| Paneer Tikka    |
++-----------------+
+9 rows in set (0.00 sec)
+
