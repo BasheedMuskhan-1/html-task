@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+  var str ="Lekha Sri";
+  var len=str.length;
+  document.write(len+"<br>");
+  var pos=str.indexOf("Sri");
+  document.write(pos+"<br>");
+  var pos =str.lastIndexOf("Sri");
+  document.write(pos+"<br>");
+  var pos =str.indexOf("locate",7);
+  document.write(pos+"<br>");
+  var pos =str.lastIndexOf("locate",7);
+   document.write(pos+"<br>");
+  var pos =str.search("locate");
+   document.write(pos+"<br>");
+  var str1="Lekha is currently undergoing java training";
+  var res = str1.slice(7, 13);
+   document.write(res+"<br>");
+  var res = str1.slice(-12, -6);
+  document.write(res+"<br>");
+  var res = str1.substring(7, 13);
+  document.write(res+"<br>");
+  var res = str1.substr(7, 6);
+  document.write(res+"<br>");
+  var res = str1.substr(-4);
+  document.write(res+"<br>");
+  var n = str.replace("Lekha", "Sri");
+  document.write(n+"<br>");
+  var text1 = "Hello World!";      
+  var text2 = text1.toUpperCase();
+  document.write(text2+"<br>");
+  var text2 = text1.toLowerCase();
+  document.write(text2+"<br>");
+  var s1 = "Hello";
+  var s2 = "World";
+  var s3 = s1.concat(" ", s2);
+  document.write(s3+"<br>");
+  var s4 = "       Hello World!        ";
+  document.write(s4+"<br>");
+  alert(s4.trim());
+  let a="5";
+  a = a.padStart(4,0);
+  document.write(a+"<br>");
+  a = a.padEnd(4,0);
+  document.write(a+"<br>");
+  var s = "HELLO WORLD";
+  res=s.charAt(0);   
+  document.write(res+"<br>");
+  res=s.charCodeAt(0); 
+  document.write(res+"<br>");
+  s[0] = "A";             
+  document.write(s+"<br>");
+  s[0]; 
+  document.write(s+"<br>");
+  var txt = "a,b,c,d,e";   
+  a=txt.split(",");  
+   document.write(a+"<br>");
+  f=txt.split(" ");
+   document.write(f+"<br>");
+  b=txt.split("|");
+   document.write(b+"<br>");
+   var txt = "Hello";      
+   c=txt.split("");
+   document.write(c+"<br>");
+
+  </script>
+
+ </body>
+</html>

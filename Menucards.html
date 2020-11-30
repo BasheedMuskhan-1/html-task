@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script type="text/javascript">
+var a=prompt("How many numbers you want to check??",a);
+var n=new Array(a);
+for (var i = 0; i < a; i++) {
+n[i]=prompt("Enter numbers",n[i]);
+}
+do
+{
+// alert("1.odd/even 2.armstrong/not 3.perfect/not 4.prime/not 5.palindrome/not 6.exit");
+var choice=prompt("enter choice 1.odd/even 2.armstrong/not 3.perfect/not 4.prime/not 5.palindrome/not 6.exit",choice);
+//document.write(typeof(choice));
+switch(choice)
+{
+case "1":
+for (var i = 0; i < a; i++) {
+if(n[i]%2==0)
+{
+document.write(n[i]+"is a even");
+document.write("<br>");
+}
+else
+{
+document.write(n[i]+"is a odd");
+document.write("<br>");
+}
+}
+break;
+case "2":
+for (var i = 0; i < a; i++) {
+var flag,number,remainder,addition = 0;
+number=n[i];
+flag = number;
+while(number > 0)
+{
+remainder = number%10;
+addition = addition + remainder*remainder*remainder;
+number = parseInt(number/10);
+}
+
+if(addition == flag)
+{
+document.write(n[i]+"- is Armstrong");
+document.write("<br>");
+}
+else
+{
+document.write(n[i]+"- is not Armstrong");
+document.write("<br>");
+}
+}
+break;
+case "3":
+for (var i = 0; i < a; i++) {
+var flag,number,remainder,addition = 0,k;
+number = n[i];
+flag = number;
+for(k = 0; k < number; k++)
+{
+remainder = number%k;
+if(remainder==0)
+{
+addition += k;
+}
+}
+if(addition == flag)
+{
+document.write(n[i]+"- is Perfect");
+document.write("<br>");
+}
+else
+{
+document.write(n[i]+"- is not Perfect");
+document.write("<br>");
+}
+}
+break;
+case "4":
+for (var i = 0; i < a; i++) {
+var j,flag=0,number;
+number = n[i];
+
+for(j=2; j <= number/2; j++)
+{
+if(number%j == 0)
+{
+flag = 1;
+break;
+}
+}
+if(flag == 0)
+{
+document.write(n[i]+"- is Prime");
+document.write("<br>");
+}
+else
+{
+document.write(n[i]+"- is not a Prime");
+document.write("<br>");
+}
+    }
+break;
+
+case "5":
+for (var i = 0; i < a; i++) {
+var rem, temp, final = 0;
+var number = n[i];
+
+temp = number;
+while(number>0)
+{
+rem = number%10;
+number = parseInt(number/10);
+final = final*10+rem;
+}
+if(final==temp)
+{
+document.write(n[i]+" is Palindrome");
+document.write("<br>");
+}
+else
+{
+document.write(n[i]+" is not palindrome");
+document.write("<br>");
+}
+}
+case "6":
+document.write("thank you");
+break;
+}
+}while(choice!="6");
+
+</script>
+ </body>
+</html>

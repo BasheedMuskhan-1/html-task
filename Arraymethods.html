@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	var company = ["HCL", "TCS", "WIPRO", "INFOSYS"];
+    document.write(company.toString()+"<br>");
+    document.write(company.join("*")+"<br>");
+	document.write(company.pop()+"<br>");
+	var x = company.pop();
+    document.write(x+"<br>");
+	document.write(company.push()+"<br>");
+	document.write(company.push("COGNIZANT")+"<br>");
+	var x = company.push("COGNIZANT");
+    document.write(x+"<br>");
+	document.write(company.shift()); 
+    var x = company.shift(); 
+	document.write(x+"<br>");
+	document.write(company.unshift("CGI")); 
+	document.write(delete company[0])+"<br>";      
+	document.write(company.splice(2, 0, "CGI", "COGNIZANT"))+"<br>";
+	document.write(company.splice(2, 0, "CGI", "COGNIZANRT")+"<br>");
+	var str1 = ["vinni", "harika"];
+    var str2 = ["sohel", "akhi", "abi"];
+	var str3 = ["varun", "vital"];
+    var str4 = str1.concat(str2);
+	var str5 = str1.concat(str2, str3); 
+	document.write(str3+"<br>");
+    document.write(str5+"<br>");
+	var x = company.slice(1);
+	document.write(x+"<br>");
+	document.write(company.sort()+"<br>");  
+	document.write(company.reverse()+"<br>"); 
+	var arr=[2,4,1,8,5];  
+	var result=arr.sort();  
+    document.write(result+"<br>");  
+	var result=arr.sort(function compare(a,b)  
+   {  
+  return a-b;  
+  });  
+  document.write(result+"<br>");  
+  document.write(arr[0]+"<br>"); 
+  var result=arr.sort().reverse();  
+  document.write(result+"<br>");  
+  document.write(arr[0]+"<br>"); 
+  company.forEach(function(fetch) {  
+  document.write(fetch+"<br>"); 
+  var arr=[2.1,3.5,4.7];  
+  var result=arr.map(Math.round);  
+  document.write(result+"<br>");  
+  var arr=[2,4,6];  
+  var result=arr.map(x=>x*3);  
+  document.writeln(result+"<br>"); 
+});  
+  var marks=[50,40,45,37,20];  
+  
+function check(value)  
+{  
+  return value>30;    
+}  
+  
+document.write(marks.filter(check)+"<br>"); 
+document.write(marks.every(check)+"<br>");  
+var arr=[12,81,23,34];  
+function test(arr)  
+{  
+    return(arr>80);  
+} 
+var ajen=arr.some(test);  
+document.write("Its "+ajen);  
+var result=arr.find(x=>x>20);  
+document.writeln(result+"<br>");
+var result=arr.findIndex(x=>x>20); 
+document.writeln(result+"<br>");
+document.write(Array.isArray(1,2,3,4)+"<br>");
+var z=arr.reduce(function (accumulator,currentValue) {  
+    return accumulator+currentValue;  
+    },0);  
+document.write(z+"<br>"); 
+var calc=arr.reduceRight(function(x,y){  
+return (x+y);  
+});  
+document.write(calc+"<br>");
+let v=['Mon','Tue','Wed','Thu','Sat'];   
+let itr=v.keys();  
+document.write(itr+"<br>");  
+//Looping through each key.  
+for (let key of itr) {  
+  document.write(key+"<br>");  
+}  
+  </script>
+ </body>
+</html>

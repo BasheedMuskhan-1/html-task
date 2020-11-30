@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	var x = 6229;
+   a=x.toString();  
+   document.write(a+"<br>");   
+   a=(6229).toString();        
+   document.write(a+"<br>");
+   a=(6000 + 200 + 29).toString(); 
+   document.write(a+"<br>");
+   var x = 9.756;
+   a=x.toExponential(2);
+    document.write(a+"<br>");
+   a=x.toExponential(4);  
+    document.write(a+"<br>");
+   a=x.toExponential(6); 
+    document.write(a+"<br>");
+   var x = 9.456;
+   a=x.toFixed(0);
+      document.write(a+"<br>");
+   a=x.toFixed(2); 
+       document.write(a+"<br>");
+  a=x.toFixed(4);
+     document.write(a+"<br>");
+  a=x.toFixed(6);
+      document.write(a+"<br>");
+  var x = 9.687;
+  a=x.toPrecision();  
+      document.write(a+"<br>");
+  a=x.toPrecision(2);  
+      document.write(a+"<br>");
+  a=x.toPrecision(4); 
+      document.write(a+"<br>");
+  a=x.toPrecision(6); 
+      document.write(a+"<br>");
+	  var x = 6229;
+   a=x.valueOf(); 
+   document.write(a+"<br>");
+   a=(123).valueOf();  
+   document.write(a+"<br>");
+   a=(100 + 23).valueOf();
+   document.write(a+"<br>");
+   document.write(Number(true)+"<br>");          
+   document.write(Number(false)+"<br>"); 
+   document.write(Number("10.33")+"<br>"); 
+   document.write(Number("John")+"<br>");
+   document.write(Number(new Date("2017-09-30"))+"<br>"); 
+   parseInt("10");   //10
+   parseInt("10.33");  //10
+   parseFloat("10");   //10
+   parseFloat("10.33"); //10.33
+   var x = Number.MAX_VALUE;
+   document.write(x+"<br>");
+   var x = Number.MIN_VALUE;
+    document.write(x+"<br>");
+	var x = Number.POSITIVE_INFINITY;
+	document.write(x+"<br>");
+	var x = Number.NEGATIVE_INFINITY;
+	document.write(x+"<br>");
+	var x = Number.NaN;
+	document.write(x+"<br>");
+	var x = 6;
+    var y = x.MAX_VALUE;
+	document.write(y+"<br>");
+  </script>
+ </body>
+</html>
