@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT addressbook (addbook*)>
+<!ELEMENT addbook (pname,paddress,ptelno+,pemail*,pdob,company)>
+<!ELEMENT paddress (#PCDATA | street | no |zip|country)*>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT no (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT pname (#PCDATA)>
+<!ELEMENT padd (#PCDATA)>
+<!ELEMENT ptelno (#PCDATA)>
+<!ELEMENT pemail (#PCDATA)>
+<!ELEMENT pdob (#PCDATA)>
+<!ELEMENT company (#PCDATA|name|site)*>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT site (#PCDATA|sname|sadd)*>
+<!ELEMENT sname (#PCDATA)>
+<!ELEMENT sadd (#PCDATA)>

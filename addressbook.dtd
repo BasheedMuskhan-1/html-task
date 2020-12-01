@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT addressbook (addbook*)>
+<!ELEMENT addbook (pname,padd,ptelno+,pemail*,pdob)>
+<!ELEMENT pname (#PCDATA)>
+<!ELEMENT padd (#PCDATA)>
+<!ELEMENT ptelno (#PCDATA)>
+<!ELEMENT pemail (#PCDATA)>
+<!ELEMENT pdob (#PCDATA)>

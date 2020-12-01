@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE addressbook SYSTEM "addressbook.dtd">
+<addressbook>
+<addbook>
+<pname>abc</pname>
+<padd>us</padd>
+<ptelno>9999</ptelno>
+<pemail>abc@gmail.com</pemail>
+<pdob>30 jan 1999</pdob>
+</addbook> 
+<addbook>
+<pname>abcd</pname>
+<padd>uk</padd>
+<ptelno>88888</ptelno>
+<pemail>abcd@gmail.com</pemail>
+<pdob>30 feb 1999</pdob>
+</addbook> 
+ </addressbook>
