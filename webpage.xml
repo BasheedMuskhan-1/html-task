@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE webpage [
+<!ELEMENT webpage (home,events,aboutus,contactus,logout)+>
+<!ELEMENT home (#PCDATA)>
+<!ELEMENT events (#PCDATA)>
+<!ELEMENT aboutus (#PCDATA)>
+<!ELEMENT contactus (#PCDATA)>
+<!ELEMENT logout (#PCDATA)>
+]>
+<webpage>
+<home>welcome to our website</home>
+<events>there are no events currently.</events>
+<aboutus>we are tthe wellknown for our works</aboutus>
+<contactus>address:beach road, mumbai</contactus>
+<logout>thank you</logout>
+</webpage>

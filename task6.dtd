@@ -1,0 +1,7 @@
+<!ELEMENT cd_review_list (cd_review)+>
+<!ELEMENT cd_review (author,review,cd)+>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+<!ELEMENT cd (author,title)+>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>

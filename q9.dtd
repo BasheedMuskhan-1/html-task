@@ -1,0 +1,5 @@
+<!ELEMENT email (subject,to,from,content)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT content (#PCDATA)>

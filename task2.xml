@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address[
+<!ELEMENT address  (personname,homeaddress,telphone,email,birthdate)>
+<!ELEMENT personname (#PCDATA)>
+<!ELEMENT homeaddress (#PCDATA)>
+<!ELEMENT telphone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT birthdate (#PCDATA)>
+]>
+<address>
+	<personname>abcd</personname>
+	<homeaddress>hyderabad</homeaddress>
+	<telphone>9632587410</telphone>
+	<email>ashji@huji.com</email>
+	<birthdate>10-09-2015</birthdate>
+</address>

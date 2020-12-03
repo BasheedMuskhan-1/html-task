@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE advaddress>
+
+-<advaddress>
+
+
+-<name>
+
+<firstname>mus</firstname>
+
+<lastname>khan</lastname>
+
+</name>
+
+
+-<address>
+
+<street>rp street</street>
+
+<dno>8-66-a/2</dno>
+
+<zip>515591</zip>
+
+<country>India</country>
+
+</address>
+
+<email>mus@132.com</email>
+
+
+-<company>
+
+<companyname>hcl technology</companyname>
+
+
+-<websites>
+
+<wname>www.hcltech.com</wname>
+
+<siteaddress>151.24.34</siteaddress>
+
+</websites>
+
+</company>
+
+</advaddress>
